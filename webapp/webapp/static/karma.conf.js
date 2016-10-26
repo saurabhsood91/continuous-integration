@@ -26,8 +26,12 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
+    browsers: ['PhantomJS'],
+    plugins: [
+        'karma-jasmine',
+        'karma-phantomjs-launcher'
+    ],
+    singleRun: true,
     concurrency: Infinity
   })
 }
