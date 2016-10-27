@@ -14,8 +14,5 @@ describe('MainTests', function() {
         it('should initialize', function() {
             expect(scope.ctrl.someValue).toBe(125);
         });
-        it('should fail', function() {
-            expect(scope.ctrl.someValue).toBe(122);
-        });
     });
 });
