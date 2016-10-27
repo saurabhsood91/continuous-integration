@@ -18,5 +18,5 @@ script:
     - npm install
     - cd ../../
     - ./manage.py test app/tests
-    - cd ../
-    - python scripts/run_tests.py
+    - cd webapp/static
+    - python run_tests.py
