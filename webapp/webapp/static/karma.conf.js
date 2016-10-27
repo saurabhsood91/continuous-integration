@@ -9,6 +9,27 @@
 // }
 
 module.exports = function(config) {
+
+    var configuration = {
+        // other things
+
+        customLaunchers: {
+            Chrome_travis_ci: {
+                base: 'Chrome',
+                flags: ['--no-sandbox']
+            }
+        },
+    };
+
+    if (process.env.TRAVIS) {
+        configuration.browsers = ['Chrome_travis_ci'];
+    } else {
+        configuration.browsers = ['PhantomJS'];
+    }
+
+    config.set(configuration);
+
+
   config.set({
     basePath: '',
     frameworks: ['jasmine'],
@@ -26,7 +47,6 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['PhantomJS'],
     plugins: [
         'karma-jasmine',
         'karma-phantomjs-launcher'
