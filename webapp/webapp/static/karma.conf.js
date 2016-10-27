@@ -10,24 +10,24 @@
 
 module.exports = function(config) {
 
-    var configuration = {
-        // other things
-
-        customLaunchers: {
-            Chrome_travis_ci: {
-                base: 'Chrome',
-                flags: ['--no-sandbox']
-            }
-        },
-    };
-
-    if (process.env.TRAVIS) {
-        configuration.browsers = ['Chrome_travis_ci'];
-    } else {
-        configuration.browsers = ['PhantomJS'];
-    }
-
-    config.set(configuration);
+    // var configuration = {
+    //     // other things
+    //
+    //     customLaunchers: {
+    //         Chrome_travis_ci: {
+    //             base: 'Chrome',
+    //             flags: ['--no-sandbox']
+    //         }
+    //     },
+    // };
+    //
+    // if (process.env.TRAVIS) {
+    //     configuration.browsers = ['Chrome_travis_ci'];
+    // } else {
+    //     configuration.browsers = ['PhantomJS'];
+    // }
+    //
+    // config.set(configuration);
 
 
   config.set({
@@ -47,9 +47,11 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
+    browsers: ['Chrome'],
     plugins: [
         'karma-jasmine',
-        'karma-phantomjs-launcher'
+        'karma-phantomjs-launcher',
+        'karma-chrome-launcher'
     ],
     singleRun: true,
     concurrency: Infinity

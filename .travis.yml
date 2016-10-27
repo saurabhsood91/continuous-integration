@@ -19,4 +19,4 @@ script:
     - cd ../../
     - ./manage.py test app/tests
     - cd webapp/static
-    - python run_tests.py
+    - node_modules/karma/bin/karma start --single-run
